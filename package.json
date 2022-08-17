@@ -15,7 +15,7 @@
   "name": "the_store",
   "description": "***",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "acorn": "^8.8.0",
     "acorn-jsx": "^5.3.2",

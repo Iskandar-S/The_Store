@@ -1,6 +1,12 @@
 const Product = require('../models/product');
+const productsData = require('../utilities/seed');
 
 const dataController = {
+  async seed(req, res, next) {
+    await Product.deleteMany({});
+    await Product.create(productsData);
+    next();
+  },
   index(req, res, next) {
     Product.find({}, (error, allProducts) => {
       if (error) {
@@ -21,6 +27,7 @@ const dataController = {
         });
       } else {
         res.locals.data.product = createdProduct;
+        next();
       }
     });
   },
@@ -40,6 +47,7 @@ const dataController = {
     Product.findByIdAndUpdate(
       req.params.id,
       req.body,
+      { new: true },
       (error, updatedProduct) => {
         if (error) {
           res.status(404).send({
@@ -47,6 +55,7 @@ const dataController = {
           });
         } else {
           res.locals.data.product = updatedProduct;
+          next();
         }
       },
     );
