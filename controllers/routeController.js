@@ -6,36 +6,48 @@ const dataController = require('./dataController');
 // add routes
 
 // Seed
-router.get('/seed', dataController.seed, viewController.redirectHome);
+router.get(
+  'products/seed',
+  dataController.seed,
+  viewController.redirectHome,
+);
 
 //  Index
-router.get('/', dataController.index, viewController.index);
+router.get('/products', dataController.index, viewController.index);
 
 // New
-router.get('/new', viewController.new);
+router.get('/products/new', viewController.new);
 
 // Delete
 router.delete(
-  '/:id',
+  '/products/:id',
   dataController.delete,
   viewController.redirectHome,
 );
 
 // Update
 router.put(
-  '/:id',
+  'products/:id',
   dataController.update,
   viewController.redirectShow,
 );
 
 // Create
-router.post('/', dataController.create, viewController.redirectHome);
+router.post(
+  'products/',
+  dataController.create,
+  viewController.redirectHome,
+);
 
 // Edit
-router.get('/:id/edit', dataController.show, viewController.edit);
+router.get(
+  'products/:id/edit',
+  dataController.show,
+  viewController.edit,
+);
 
 // Show
-router.get('/:id', dataController.show, viewController.show);
+router.get('products/:id', dataController.show, viewController.show);
 
 // export router
 module.exports = router;
