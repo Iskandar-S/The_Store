@@ -28,7 +28,7 @@ class New extends React.Component {
             <div class="container-fluid">
               <a class="navbar-brand" href="/products">
                 <img
-                  src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                  src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                   alt=""
                   width="90"
                   height="24"
