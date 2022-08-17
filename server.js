@@ -18,6 +18,7 @@ app.use((req, res, next) => {
 });
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 app.use('/products', require('./controllers/routeController'));
 
 app.listen(port, () => {
