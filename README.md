@@ -29,4 +29,6 @@ Nothing. Just go [here](https://ps-the-shop.herokuapp.com/products/).
 
 - MongoDB
 - Express
+- React
 - Node
+- Bootstrap
